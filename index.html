@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue | Debutant</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    html{
+      background-color: #ccc;
+    }
+    body{
+      max-width: 1200px;
+      width: 90%;
+      background-color: #fff;
+      margin: 20px auto;
+      padding: 20px 0;
+    }
+    form{
+      display: block;
+    }
+    label, input,textarea, p{
+      display: block;
+      width: 90%;
+      margin: 5px auto;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div id="app">
+    
+    <form action="">
+      <label for="name">Name</label>
+      <input type="text" v-model="name" id="name">
+
+      <label for="email">Email</label>
+      <input type="email" v-model="email" id="email">
+
+      <label for="message">Mesasge</label>
+      <textarea name="message" v-model="message" id="message" cols="30" rows="10"></textarea>
+    </form>
+
+    <p><strong>Name: </strong> {{ name }}</p>
+    <p><strong>Email: </strong> {{ email }}</p>
+    <p><strong>Mesasge: </strong> {{ message }}</p>
+
+  </div>
+  <script type="module">
+    import Form from './Form.js';
+    const { createApp } = Vue
+  
+    createApp(Form).mount('#app')
+  </script>
+  
+</body>
+</html>
